@@ -1,0 +1,156 @@
+@import './index.scss';
+@import './font.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+html, body {
+   min-height: 100%;
+   min-width: 100%;
+}
+
+body {
+  background: #707d86 linear-gradient(135deg, #000000, #707d86) no-repeat;
+  min-width: 300px;
+}
+
+@media screen and (max-width: 720px) { 
+  body {
+    background-image: linear-gradient(180deg, #000000, #707d86);
+  }
+}
+
+.container {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  
+  margin: 0 auto;
+  padding: 0 10px;
+
+  max-width: 700px;
+  min-width: 300px;
+}
+
+.logo {
+	margin: 40px 0;
+}
+
+.footer {
+	opacity: 0.3;
+	margin-top: 40px;
+	padding-bottom: 40px;
+}
+
+.experts {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 0;
+	align-items: flex-start;
+	justify-content: space-around;
+
+	&__item {
+		display: block;
+		margin: 0 20px 20px;
+
+	}
+}
+
+.expert {
+	display: block;
+	min-width: 120px;
+	text-decoration: none;
+	color: inherit;
+
+	&__avatar {
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		background: #fff;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__picture {
+		width: 106px;
+		height: 106px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 7px auto;
+	}
+
+	&__name {
+		margin-top: 12px;
+	}
+
+	&__duty {
+		font-weight: bold;
+	}
+
+	&--active {
+		color: #e65b39;
+
+		.expert__avatar {
+			background-image: linear-gradient(to bottom, #f09835, #e65a39);
+		}
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 720px) {
+	.expert {
+		min-width: 160px;
+		margin-bottom: 30px;
+
+		&__avatar {
+			width: 160px;
+			height: 160px;
+		}
+
+		&__picture {
+			width: 140px;
+			height: 140px;
+			margin: 10px auto;
+		}
+
+		&__name {
+			font-size: 16px;
+		}
+
+		&__duty {
+			font-size: 18px;
+		}
+	}
+}
+
+.section {
+	margin-bottom: 40px;
+
+	&__header {
+	  font-size: 28px;
+	  font-weight: 300;
+	  line-height: 1.14;
+	  margin-bottom: 30px;
+	}
+
+	&__text {
+		margin-bottom: 20px;
+	}
+}
+
