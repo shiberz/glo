@@ -16,7 +16,7 @@ module.exports = {
   node: {
     fs: 'empty',
   },
-  entry: ['./src/js/app.js', './src/style/main.scss'],
+  entry: ['./src/js/app.js', './src/style/main.scss', './src/style/expert_page.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.[hash].js',

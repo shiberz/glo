@@ -1,0 +1,28 @@
+.person {
+	display: block;
+	min-width: 120px;
+	text-decoration: none;
+	color: inherit;
+
+	&__avatar {
+		background-image: linear-gradient(to bottom, #f09835, #e65a39);
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+		background: #fff;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__picture {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+}
+
+@media screen and (max-width: 720px) {
+
+}
