@@ -33,7 +33,19 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader',
+        use: [
+          {
+            loader: 'raw-loader',
+          },
+          {
+            loader: 'ssi-loader',
+            options: {
+              locations: {
+                "include": "./src/includes",
+              }
+            }
+          }
+        ]        
       },
     ],
   },
