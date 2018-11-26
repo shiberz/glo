@@ -2,7 +2,6 @@
 @import './font.scss';
 @import './_experts.scss';
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -14,14 +13,14 @@ html, body {
    min-width: 100%;
 }
 
-body {
+.gradient {
   background: #707d86 linear-gradient(135deg, #000000, #707d86) no-repeat;
-  min-width: 300px;
+  min-width: 375px;
   color: #fff;
 }
 
 @media screen and (max-width: 720px) { 
-  body {
+  .gradient {
     background-image: linear-gradient(180deg, #000000, #707d86);
   }
 }
@@ -55,27 +54,35 @@ body {
 	padding-bottom: 40px;
 }
 
+.header {
+	min-width: 375px;
+}
+
 .nowrap {
 	white-space: nowrap;
 }
 
 .section {
 	margin-bottom: 40px;
+	box-sizing: border-box;
 
 	&__header {
 	  font-size: 28px;
 	  font-weight: 300;
 	  line-height: 1.14;
 	  margin-bottom: 30px;
+	  padding: 0 20px;
 	}
 
 	&__text {
 		margin-bottom: 20px;
+		padding: 0 20px;
 	}
 
 	&--white {
 		background: #fff;
 		color: #000;
+		padding: 40px 20px 20px;
 	}
 
 	&--extended {

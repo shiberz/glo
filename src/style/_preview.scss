@@ -1,25 +1,31 @@
 .previews {
 	display: flex;
-	justify-content: flex-between;
+	justify-content: space-between;
 	list-style: none;
 	flex-wrap: wrap;
 
 	&__item {
+		margin-top: 20px;
 	}
 }
 
+@media screen and (max-width: 699px) {
+	.previews {
+		max-width: 460px;
+	}
+}
 
 .preview {
 	position: relative;
 	line-height: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
 
 	&__text {
 		position: absolute;
-		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		line-height: normal;
 		top: 0;
 		bottom: 0;
 		left: 0;
@@ -29,6 +35,8 @@
 		opacity: 0;
 		font-weight: bold;
 		font-size: 18px;
+		box-sizing: border-box;
+		padding: 20px;
 	}
 
 	&:hover &__text,
@@ -46,6 +54,10 @@
 }
 
 @media screen and (max-width: 460px) {
+	.previews__item {
+		margin-top: 9px;
+	}
+
 	.preview {
 		&__picture {
 			width: 119px;
@@ -53,7 +65,8 @@
 		}
 
 		&__text {
-			line-height: 119px;
+			font-size: 16px;
+			padding: 10px;
 		}
 	}
 }
