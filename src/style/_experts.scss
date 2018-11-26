@@ -58,18 +58,22 @@
 			height: 60px;
 		}
 
-		&__picture {
+		.expert__picture {
 			width: 52px;
 			height: 52px;
 			margin: 4px auto;
 		}
 	}
 
-	&--active {
+	&--active,
+	&:hover,
+	&:active {
 		color: #e65b39;
+		transition: all .3s;
 
 		.expert__avatar {
 			background-image: linear-gradient(to bottom, #f09835, #e65a39);
+			transition: all .3s;
 		}
 	}
 }
@@ -106,7 +110,7 @@
 				height: 70px;
 			}
 
-			&__picture {
+			.expert__picture {
 				width: 62px;
 				height: 62px;
 				margin: 4px auto;
