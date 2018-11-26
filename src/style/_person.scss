@@ -1,24 +1,32 @@
 .person {
 	display: block;
-	min-width: 120px;
 	text-decoration: none;
 	color: inherit;
+	text-align: left;
+
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 
 	&__avatar {
+		display: block;
 		background-image: linear-gradient(to bottom, #f09835, #e65a39);
 		width: 140px;
 		height: 140px;
 		margin: 0 auto;
-		background: #fff;
 		border-radius: 50%;
 		overflow: hidden;
+		float: left;
 	}
 
 	&__picture {
 		width: 120px;
 		height: 120px;
 		border-radius: 50%;
-		overflow: hidden;
+		border: 5px solid #fff;
+		margin: 5px;
 	}
 
 }
