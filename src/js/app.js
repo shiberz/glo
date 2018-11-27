@@ -5,6 +5,7 @@ if (module.hot) {
 $(function(){
  	var isOpen = false;
  	var slide = '';
+ 	var slides = $('.js-slides').children();
 
  	function openSlideshow() {
  		isOpen = true;
@@ -25,17 +26,32 @@ $(function(){
  		if (hash.startsWith('video') || hash.startsWith('img')) {
  			slide = hash;
  			openSlideshow();
+ 			goTo(hash);
  		} else {
  			closeSlideshow();
  			slide = '';
  		}
  	}
 
-	$(window).on('popstate', route);
 	$('.js-close-slideshow').on('click', closeSlideshow);
-	$('.js-slides').flipbox({
+	var slider = $('.js-slides').flipbox({
 		vertical: false,
-		autoplay: true, 
-		autoplayWaitDuration: 3000,
 	});
+	
+	// goto next
+	function nextSlide () {
+		return slider.flipbox('next');
+	}
+	// back to previous
+	function prevSlide () {
+		return slider.flipbox('prev')
+	}
+	// goto a specified slide
+	function goTo(id) {
+		var index = $.map(slides, el => el.id).indexOf(id);
+		return slider.flipbox('jump', index)
+	}
+
+	$(window).on('popstate', route);
+	route();
 });

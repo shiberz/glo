@@ -37,6 +37,25 @@
 	max-width: 820px;
 	height: 520px;
 	overflow: auto;
+	position: relative;
+
+	&__forward,
+	&__backward {
+		position: absolute;
+		top: 0;
+		width: 70px;
+		height: 100%;
+	}
+
+	&__backward {
+		right: 100%;
+		background: #fcc 50% 50% url('/static/back.svg') no-repeat;
+	}
+
+	&__forward {
+		left: 100%;
+		background: #ffc 50% 50% url('/static/forward.svg') no-repeat;
+	}
 }
 
 .slider__header,
