@@ -9,13 +9,13 @@ $(function(){
 
  	function openSlideshow() {
  		isOpen = true;
- 		$(document.body).css({overflow: 'hidden'});
+ 		$(document.body).addClass('no-scroll');
 	 	$('.js-main-content').addClass('slideshow');
  	}
 
  	function closeSlideshow() {
  		isOpen = false;
- 		$(document.body).css({overflow: 'auto'});
+ 		$(document.body).removeClass('no-scroll');
 	 	$('.js-main-content').removeClass('slideshow');
 	 	window.location.hash = '';
  	}
@@ -34,12 +34,13 @@ $(function(){
  	}
 
 	$('.js-close-slideshow').on('click', closeSlideshow);
-	var slider = $('.js-slides').flipbox({
-		vertical: false,
-	});
+	// var slider = $('.js-slides').flipbox({
+	// 	vertical: false,
+	// });
 	
 	// goto next
 	function nextSlide () {
+		debugger;
 		return slider.flipbox('next');
 	}
 	// back to previous
@@ -51,6 +52,9 @@ $(function(){
 		var index = $.map(slides, el => el.id).indexOf(id);
 		return slider.flipbox('jump', index)
 	}
+
+ 	$('.js-slides').on('ended', '.js-slide__video', nextSlide);
+
 
 	$(window).on('popstate', route);
 	route();
