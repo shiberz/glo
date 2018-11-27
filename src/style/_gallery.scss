@@ -57,6 +57,12 @@
 	width: 520px;
 }
 
+.slide,
+.slide__video,
+.slide__img {
+	width: 520px;
+}
+
 @media screen and (max-width: 675px) {
 	.slides__viewport {
 		width: 375px;
@@ -70,6 +76,8 @@
 	.slide__text--bottom {
 		display: block;
 	}
+
+
 }
 
 @media screen and (max-width: 0px) {
@@ -83,10 +91,24 @@
 		display: block;
 	}
 
+	.slide,
+	.slide__video,
+	.slide__img {
+		width: 375px;
+	}
+
 	.overlay {
 		min-height: 520px;
 	}
 	
+	@media screen and (min-width: 820px) {
+		.slide,
+		.slide__video,
+		.slide__img {
+			width: 520px;
+		}
+	}
+
 	@media screen and (min-width: 960px) {
 		.slider {
 			margin: 95px auto 0;
