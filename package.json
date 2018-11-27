@@ -50,9 +50,9 @@
     "webpack-merge": "^4.1.4"
   },
   "browserslist": [
+    "ie >= 11",
     ">0.2%",
-    "not dead",
-    "not ie < 11"
+    "not dead"
   ],
   "dependencies": {
     "jquery": "^3.3.1"
