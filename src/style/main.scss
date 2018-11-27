@@ -8,14 +8,20 @@
 	outline: none;
 }
 
+html{
+  height: 100%;
+}
+
 html, body {
    min-height: 100%;
+   min-height: 100vh;
    min-width: 100%;
 }
 
 .gradient {
   background: #707d86 linear-gradient(135deg, #000000, #707d86) no-repeat;
-  min-width: 375px;
+  min-width: 395px;
+  min-height: 100vh;
   color: #fff;
 }
 
