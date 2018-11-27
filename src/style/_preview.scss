@@ -51,6 +51,11 @@
 		height: 220px;
 	}
 	
+	&__link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 @media screen and (max-width: 460px) {

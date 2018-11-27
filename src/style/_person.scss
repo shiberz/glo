@@ -81,3 +81,56 @@
 		}
 	}
 }
+
+.person--micro {
+	padding: 10px 0 30px 20px;
+
+	.person__go-back {
+		width: 16px;
+		height: 44px;
+		background: 50% 50% url('/static/back.svg') no-repeat;
+		margin: 0 20px 0 0;
+		display: block;
+		float: left;
+	}
+
+	.person__link {
+		float: left;
+	}
+
+	.person__avatar {
+		width: 44px;
+		height: 44px;
+	}
+
+	.person__picture {
+		width: 40px;
+		height: 40px;
+		border: 0;
+		margin: 2px;
+	}
+
+	.person__name {
+		line-height: 44px;
+		padding: 0 0 16px 50px;
+		font-size: 16px;
+	}
+
+	.person__duty {
+		padding: 0;
+		width: 100%;
+		flex-grow: 1;
+	}
+	.person__link {
+		padding: 0;
+		width: 100%;
+		flex-grow: 1;
+	}
+}
+
+.person--with-link {
+	.person__name {
+		padding-left: 100px;
+	}
+}
+

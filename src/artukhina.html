@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Static HTML Site Boilerplate</title>
-  <link rel="stylesheet"  media="screen" href="/style/expert__page.scss"/>
-</head>
+<!--# include virtual="./src/includes/head.html" -->
 
 <body>
-	<div class="gradient">
+	<div class="gradient js-main-content">
 	<header class="header container">
 		<a href="/" rel="noopener noreferrer">
 			<img src="/static/logo.svg" class="logo" alt="logo" width="289px" height="71px"/>
@@ -38,7 +32,7 @@
 				</div>
 			</div>
 			<div class="icons">
-				<a href="" class="icons__item">
+				<a href="#!video1" class="icons__item" data-slide="7197">
 					<span class="icon">
 						<img src="/static/artukhina/О критике.png" class="icon__picture" alt="Катя Артюхина. О критике" title="Катя Артюхина. О критике"/>
 					</span>
@@ -46,7 +40,7 @@
 						О критике
 					</span>
 				</a>
-				<a href="" class="icons__item">
+				<a href="#!video2" class="icons__item" data-slide="7189">
 					<span class="icon">
 						<img src="/static/artukhina/О ремонте.png" class="icon__picture" alt="Катя Артюхина. О ремонте" title="Катя Артюхина. О ремонте"/>
 					</span>
@@ -54,7 +48,7 @@
 						О ремонте
 					</span>
 				</a>
-				<a href="" class="icons__item">
+				<a href="#!video3" class="icons__item" data-slide="7194">
 					<span class="icon">
 						<img src="/static/artukhina/О стиле.png" class="icon__picture" alt="Катя Артюхина. О стиле" title="Катя Артюхина. О стиле"/>
 					</span>
@@ -62,7 +56,7 @@
 						О стиле
 					</span>
 				</a>
-				<a href="" class="icons__item">
+				<a href="#!video4" class="icons__item" data-slide="7193">
 					<span class="icon">
 						<img src="/static/artukhina/Об иллюзии простора.png" class="icon__picture" alt="Катя Артюхина. Об иллюзии простора" title="Катя Артюхина. Об иллюзии простора"/>
 					</span>
@@ -73,40 +67,52 @@
 			</div>
 			<ul class="previews">
 				<li class="previews__item preview" data-slide="glo-1302">
-					<img src="/static/artukhina/glo-1302-119.jpg"  alt="О стиле" title="О стиле" class="preview__picture"/>
-					<span class="preview__text">
-						О стиле
-					</span>
+					<a href="#!img1" class="preview__link">
+						<img src="/static/artukhina/glo-1302-119.jpg"  alt="О стиле" title="О стиле" class="preview__picture"/>
+						<span class="preview__text">
+							О стиле
+						</span>
+					</a>
 				</li>
 				<li class="previews__item preview" data-slide="glo-1379">
-					<img src="/static/artukhina/glo-1379-119.jpg"  alt="Об архитектуре в гардеробе" title="Об архитектуре в гардеробе" class="preview__picture"/>
-					<span class="preview__text">
-						Об архитектуре в гардеробе
-					</span>
+					<a href="#!img2" class="preview__link">
+						<img src="/static/artukhina/glo-1379-119.jpg"  alt="Об архитектуре в гардеробе" title="Об архитектуре в гардеробе" class="preview__picture"/>
+						<span class="preview__text">
+							Об архитектуре в гардеробе
+						</span>
+					</a>
 				</li>
 				<li class="previews__item preview" data-slide="glo-1467">
-					<img src="/static/artukhina/glo-1467-119.jpg"  alt="О рабочем пространстве " title="О рабочем пространстве " class="preview__picture"/>
-					<span class="preview__text">
-						О рабочем пространстве 
-					</span>
+					<a href="#!img3" class="preview__link">
+						<img src="/static/artukhina/glo-1467-119.jpg"  alt="О рабочем пространстве " title="О рабочем пространстве " class="preview__picture"/>
+						<span class="preview__text">
+							О рабочем пространстве 
+						</span>
+					</a>
 				</li>
 				<li class="previews__item preview" data-slide="glo-1416">
-					<img src="/static/artukhina/glo-1416-119.jpg"  alt="О стиле" title="О стиле" class="preview__picture"/>
-					<span class="preview__text">
-						О стиле
-					</span>
+					<a href="#!img4" class="preview__link">
+						<img src="/static/artukhina/glo-1416-119.jpg"  alt="О стиле" title="О стиле" class="preview__picture"/>
+						<span class="preview__text">
+							О стиле
+						</span>
+					</a>
 				</li>
 				<li class="previews__item preview" data-slide="glo-1216">
-					<img src="/static/artukhina/glo-1216-119.jpg"  alt="О переменах" title="О переменах" class="preview__picture"/>
-					<span class="preview__text">
-						О переменах
-					</span>
+					<a href="#!img5" class="preview__link">
+						<img src="/static/artukhina/glo-1216-119.jpg"  alt="О переменах" title="О переменах" class="preview__picture"/>
+						<span class="preview__text">
+							О переменах
+						</span>
+					</a>
 				</li>
 				<li class="previews__item preview" data-slide="glo-1401">
-					<img src="/static/artukhina/glo-1401-119.jpg"  alt="О референсах" title="О референсах" class="preview__picture"/>
-					<span class="preview__text">
-						О референсах
-					</span>
+					<a href="#!img6" class="preview__link">
+						<img src="/static/artukhina/glo-1401-119.jpg"  alt="О референсах" title="О референсах" class="preview__picture"/>
+						<span class="preview__text">
+							О референсах
+						</span>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -116,6 +122,9 @@
 		<p>Стилист Юлия Авдеева</p>
 		<p>MUAH Юлия Пантюхина</p>
 	</footer>
+	<!--# include virtual="./src/includes/slides-artukhina.html" -->
 </div>
+<!--# include virtual="./src/includes/scripts.html" -->
+
 </body>
 </html>
