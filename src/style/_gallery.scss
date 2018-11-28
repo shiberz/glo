@@ -3,8 +3,9 @@
 }
 
 .overlay {
-    height: 0;
+    height: 100%;
     width: 100%;
+    opacity: 0;
     position: fixed; 
     z-index: 1;
     left: 0;
@@ -13,7 +14,7 @@
     background-color: rgba(0,0,0, 0.5); 
     overflow-x: hidden; 
     transition: .4s;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -46,12 +47,22 @@
 
 .slider {
 	display: none;
-	min-width: 820px;
 	min-height: 520px;
 	max-width: 820px;
 	max-height: 520px;
 	overflow: visible;
 	position: relative;
+
+	&--stories {
+		background: transparent;
+		.slides {
+			background: transparent;
+		}
+		.slides__sidebar,
+		.slide__text--bottom {
+			display: none;
+		}
+	}
 
 	&__forward,
 	&__backward {
@@ -77,11 +88,14 @@
 .slides {
 	display: flex;
 	background: #fff;
+	max-height: inherit;
 }
 
 .slides__sidebar {
 	width: 300px;
+	height: inherit;
 	background: #fff;
+	overflow: auto;
 }
 
 .slides__viewport {
@@ -89,6 +103,7 @@
 	height: 520px;
 	max-height: 520px;
 	overflow: hidden;
+	margin: 0 auto;
 }
 
 .slider__header,
@@ -103,6 +118,7 @@
 
 .slide__text {
 	color: #000;
+	padding-bottom: 10px;
 
 	.section__text {
 		font-size: 13px;
@@ -118,14 +134,15 @@
 
 		&--show {
 			display: block;
-			margin-bottom: 10px;
+			margin-bottom: 0px;
 		}
 	}
 }
 
 .slideshow {
 	.overlay {
-		height: 100%;
+		opacity: 1;
+		display: flex;
 	}
 
 	.slider {
@@ -154,6 +171,7 @@
 @media screen and (max-width: 960px) {
 	.slider {
 		margin-top: 80px;
+		max-height: 520px;
 
 		&__forward,
 		&__backward {

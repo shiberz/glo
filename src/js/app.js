@@ -13,15 +13,17 @@ $(function(){
  	var current_story = null;
 	slider_video.hide();
 
- 	function openSlideshow() {
+ 	function openSlideshow(isStory) {
  		isOpen = true;
  		$(document.body).addClass('no-scroll');
 	 	$('.js-main-content').addClass('slideshow');
+	 	$('.slider').toggleClass('slider--stories', isStory);
  	}
 
  	function closeSlideshow() {
  		isOpen = false;
  		stopStory();
+ 		$('.slider').removeClass('slider--stories');
  		$(document.body).removeClass('no-scroll');
 	 	$('.js-main-content').removeClass('slideshow');
 	 	$('.section--show').removeClass('section--show');
@@ -36,14 +38,14 @@ $(function(){
  			slider_video.hide();
  			slider_img.show();
  			setImgNav();
- 			openSlideshow();
+ 			openSlideshow(false);
  			goToImg(hash);
  		} else if(hash.startsWith('video')) {
  			story = hash;
  			slider_video.show();
  			slider_img.hide();
  			setStoryNav()
- 			openSlideshow();
+ 			openSlideshow(true);
  			goToVideo(hash);
  		} else {
  			closeSlideshow();
@@ -60,7 +62,7 @@ $(function(){
 	function showText(id) {
 		$('.section--show').removeClass('section--show');
 		slide = id;
-		$(`#${id}__text`).addClass('section--show');
+		$(`.js-${id}__text`).addClass('section--show');
 	}
 
 	// goto next
