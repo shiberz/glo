@@ -139,6 +139,11 @@
 	max-height: 520px;
 }
 
+.slide__video {
+	display: block;
+	margin: 0 auto;
+}
+
 @media screen and (max-height: 520px) {
 	.overlay {
 		align-items: flex-start;
