@@ -46,13 +46,17 @@ $(function(){
 	}
 	// back to previous
 	function prevSlide () {
-		return slider.flipbox('prev')
+		return slider.flipbox('prev', true);
 	}
 	// goto a specified slide
 	function goTo(id) {
 		var index = $.map(slides, el => el.id).indexOf(id);
 		return slider.flipbox('jump', index)
 	}
+
+	var mc = new Hammer($('.js-slides')[0]);
+	mc.on("swipeleft", nextSlide);
+	mc.on("swiperight", prevSlide);
 
 	$('.js-slideshow-forward').on('click', nextSlide);
 	$('.js-slideshow-backward').on('click', prevSlide);
