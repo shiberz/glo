@@ -40,16 +40,45 @@ $(function(){
 		vertical: false,
 	});
 	
+	function showText(id) {
+		$('.section--show').removeClass('section--show');
+		slide = id;
+		$(`#${id}__text`).addClass('section--show');
+	}
+
 	// goto next
 	function nextSlide () {
+		var id = parseInt(slide.replace(/\D+/ig, ''), 10);
+		id += 1;
+		if(slide.startsWith('img')){
+			id = (id > 6) ? 1 : id;
+			id = `img${id}`;
+		} 
+		if(slide.startsWith('video')){
+			id = (id > 4) ? 1 : id
+			id = `video${id}`;
+		} 
+		showText(id);
 		return slider.flipbox('next');
 	}
 	// back to previous
 	function prevSlide () {
+		var id = parseInt(slide.replace(/\D+/ig, ''), 10);
+		id -= 1;
+		if(slide.startsWith('img')){
+			id = (id < 1) ? 6 : id;
+			id = `img${id}`;
+		} 
+		if(slide.startsWith('video')){
+			id = (id < 1) ? 4 : id
+			id = `video${id}`;
+		} 
+		showText(id);
 		return slider.flipbox('prev', true);
 	}
 	// goto a specified slide
 	function goTo(id) {
+		showText(id);
 		var index = $.map(slides, el => el.id).indexOf(id);
 		return slider.flipbox('jump', index)
 	}
@@ -60,6 +89,10 @@ $(function(){
 
 	$('.js-slideshow-forward').on('click', nextSlide);
 	$('.js-slideshow-backward').on('click', prevSlide);
+
+	$(window).on('resize', function() {
+		slider.flipbox('resize');
+	})
 
  	videos.on('ended', '.js-slide__video', nextSlide);
 
