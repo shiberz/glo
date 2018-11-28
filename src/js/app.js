@@ -10,6 +10,7 @@ $(function(){
  	var videos = $('.js-story');
  	var slider_img = $('.js-slides');
  	var slider_video = $('.js-stories');
+ 	var current_story = null;
 	slider_video.hide();
 
  	function openSlideshow() {
@@ -20,6 +21,7 @@ $(function(){
 
  	function closeSlideshow() {
  		isOpen = false;
+ 		stopStory();
  		$(document.body).removeClass('no-scroll');
 	 	$('.js-main-content').removeClass('slideshow');
 	 	$('.section--show').removeClass('section--show');
@@ -98,7 +100,14 @@ $(function(){
 		return slider.flipbox('jump', index)
 	}
 
+	function stopStory() {
+		if (current_story) {
+			current_story.pause();
+		}
+	}
+
 	function goToVideo(id) {
+		stopStory();
 		story = id;
 		videos.hide();
 		var el = $(`#${id}`);
@@ -106,15 +115,24 @@ $(function(){
 		el.show();
 		video.attr('preload', 'preload');
 		video.attr('autoplay', 'autoplay');
-		video[0].play();
+		current_story = video[0];
+		current_story.play();
 	}
 
 	function nextVideo() {
-		console.log('nextVideo');	
+		var id = parseInt(story.replace(/\D+/ig, ''), 10);
+		id += 1;
+		if (id > 4) {
+			return closeSlideshow()
+		}
+		return goToVideo(`video${id}`);
 	}
 
 	function prevVideo() {
-		console.log('prevVideo');
+		var id = parseInt(story.replace(/\D+/ig, ''), 10);
+		id -= 1;
+		id = (id < 1) ? 4 : id;
+		return goToVideo(`video${id}`);
 	}
 
 	function setImgNav() {
@@ -139,7 +157,7 @@ $(function(){
 		$('.js-slideshow-backward').on('click', prevVideo);
 	}
 
- 	videos.on('ended', '.js-slide__video', nextVideo);
+ 	$('.js-slide__video').on('ended', nextVideo);
 
 
 	$(window).on('popstate', route);
