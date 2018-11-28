@@ -13,9 +13,16 @@ html{
 }
 
 html, body {
-   min-height: 100%;
-   min-height: 100vh;
-   min-width: 100%;
+	min-height: 100%;
+	min-height: 100vh;
+	min-width: 100%;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
 }
 
 .gradient {
@@ -32,12 +39,6 @@ html, body {
 }
 
 .container {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: normal;
   
   text-align: center;
   line-height: 20px;
