@@ -122,7 +122,63 @@
 		<p>Стилист Юлия Авдеева</p>
 		<p>MUAH Юлия Пантюхина</p>
 	</footer>
-	<!--# include virtual="./src/includes/slides-artukhina.html" -->
+	<div class="overlay">
+		<button class="overlay__close popup-control js-close-slideshow"></button>
+		<div class="slider">
+			<button class="slider__forward popup-control js-slideshow-forward"></button>
+			<button class="slider__backward popup-control js-slideshow-backward"></button>
+			<div class="slider__header person person--micro person--with-link">
+				<a class="person__go-back js-close-slideshow"></a>
+				<a href="https://www.instagram.com/first_april/" class="person__avatar">
+					<img src="/static/artukhina/avatar_280.jpg" class="person__picture" alt="Катя Артюхина. Архитектор" title="Катя Артюхина. Архитектор">
+				</a>
+				<div class="person__name">
+					Катя Артюхина
+				</div>
+				<div class="person__duty">
+					Архитектор
+				</div>
+				<div class="person__duty">
+					Москва
+				</div>
+				<div class="person__link">
+					<a href="https://www.instagram.com/first_april/" class="">
+						@first_april
+					</a>
+				</div>
+			</div>
+			<div class="slides">
+				<!--# include virtual="./src/static/artukhina/slides.html" -->
+				<div class="slides__sidebar">
+					<div class="person person--micro">
+						<a href="https://www.instagram.com/first_april/" class="person__avatar">
+							<img src="/static/artukhina/avatar_280.jpg" class="person__picture" alt="Катя Артюхина. Архитектор" title="Катя Артюхина. Архитектор">
+						</a>
+						<div class="person__name">
+							Катя Артюхина
+						</div>
+						<div class="person__duty">
+							Архитектор
+						</div>
+						<div class="person__duty">
+							Москва
+						</div>
+						<div class="person__link">
+							<a href="https://www.instagram.com/first_april/" class="">
+								@first_april
+							</a>
+						</div>
+					</div>
+					<div class="slide__text js-slide__text">
+						<!--# include virtual="./src/static/artukhina/slides-text.html" -->
+					</div>
+				</div>
+			</div>
+			<div class="slide__text slide__text--bottom js-slide__text">
+				<!--# include virtual="./src/static/artukhina/slides-text.html" -->
+			</div>
+		</div>
+	</div>
 </div>
 <!--# include virtual="./src/includes/scripts.html" -->
 
