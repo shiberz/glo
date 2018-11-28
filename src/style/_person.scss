@@ -55,6 +55,8 @@
 
 @media screen and (max-width: 720px) {
 	.person {
+		padding-left: 20px;
+
 		&__avatar {
 			width: 80px;
 			height: 80px;
