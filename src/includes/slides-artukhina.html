@@ -1,8 +1,8 @@
 <div class="overlay">
-	<button class="overlay__close js-close-slideshow"></button>
+	<button class="overlay__close popup-control js-close-slideshow"></button>
 	<div class="slider">
-		<div class="slider__forward js-slideshow-forward"></div>
-		<div class="slider__backward js-slideshow-backward"></div>
+		<button class="slider__forward popup-control js-slideshow-forward"></button>
+		<button class="slider__backward popup-control js-slideshow-backward"></button>
 		<div class="slider__header person person--micro person--with-link">
 			<a class="person__go-back js-close-slideshow"></a>
 			<a href="https://www.instagram.com/first_april/" class="person__avatar">
@@ -24,55 +24,57 @@
 			</div>
 		</div>
 		<div class="slides">
-			<div class="slides__viewport js-slides">
-				<div class="slide slides__item" id="video1">
+<!-- 			<div class="slides__viewport js-stories">
+				<div class="slide slides__item js-story" id="video1">
 					<video autoplay inline controls class="slide__video js-slide__video">
 					  <source src="/static/artukhina/о критике.mp4" type="video/mp4">
 					</video>
 				</div>
-				<div class="slide slides__item" id="video2">
+				<div class="slide slides__item js-story" id="video2">
 					<video class="slide__video js-slide__video" controls autoplay muted src="/static/artukhina/о ремонте.mp4">
 					</video>
 				</div>
-				<div class="slide slides__item" id="video3">
+				<div class="slide slides__item js-story" id="video3">
 					<video class="slide__video js-slide__video" controls autoplay muted src="/static/artukhina/о стиле.mp4">
 					</video>
 				</div>
-				<div class="slide slides__item" id="video4">
+				<div class="slide slides__item js-story" id="video4">
 					<video class="slide__video js-slide__video" controls autoplay muted src="/static/artukhina/об иллюзии пространства.mp4">
 					</video>
 				</div>
-				<div class="slide slides__item" id="img1">
+			</div> -->
+			<div class="slides__viewport js-slides">
+				<div class="slide slides__item js-slide" id="img1">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1302-375.jpg 675w"
  						src="/static/artukhina/glo-1302-520.jpg" 
  						alt=""/>
 				</div>
-				<div class="slide slides__item" id="img2">
+				<div class="slide slides__item js-slide" id="img2">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1379-375.jpg 675w"
  						src="/static/artukhina/glo-1379-520.jpg" 
  						alt=""/>
 				</div>
-				<div class="slide slides__item" id="img3">
+				<div class="slide slides__item js-slide" id="img3">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1467-375.jpg 675w"
  						src="/static/artukhina/glo-1467-520.jpg" 
  						alt=""/>
 				</div>
-				<div class="slide slides__item" id="img4">
+				<div class="slide slides__item js-slide" id="img4">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1416-375.jpg 675w"
  						src="/static/artukhina/glo-1416-520.jpg" 
  						alt=""/>
 				</div>
-				<div class="slide slides__item" id="img5">
+				<div class="slide slides__item js-slide" id="img5">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1216-375.jpg 675w"
  						src="/static/artukhina/glo-1216-520.jpg" 
  						alt=""/>
 				</div>
-				<div class="slide slides__item" id="img6">
+				<div class="slide slides__item js-slide" id="img6">
 					<img class="slide__img" 
 						srcset="/static/artukhina/glo-1401-375.jpg 675w"
  						src="/static/artukhina/glo-1401-520.jpg" 
@@ -100,13 +102,172 @@
 					</div>
 				</div>
 				<div class="slide__text js-slide__text">
-					<!--# include virtual="./src/includes/text-artukhina.html" -->
+					<div class="section" id="img1__text">
+						<div class="section__header">
+							О стиле заказчика в интерьере и вдохновении
+						</div>
+						<p class="section__text">
+							Для меня очень важно, чтобы заказчик был уверен в себе и в своих решениях, обладал чувством прекрасного и был готов к экспериментам, к движению вперед. В идеале — это тот, кто готов отказаться от банальных решений и не боится взглянуть на вещи под разными углами.
+						</p>
+						<p class="section__text">
+							Меня вдохновляет прежде всего работа с цветом и с пропорциями, благодаря которым простые вещи становятся сложными. Даже заказчик в первую очередь ассоциирую с цветом, а уже потом со стилем. А еще очень вдохновляет любовь к русскому авангарду.
+						</p>
+						<div class="section__header">
+							О личном стиле
+						</div>
+						<p class="section__text">
+							Эклектичный минимализм.
+						</p>
+					</div>
+					<div class="section" id="img2__text">
+						<div class="section__header">
+							Об архитектуре в гардеробе
+						</div>
+						<p class="section__text">
+							Помню, как на диплом меня взял преподаватель сказав, что дело не в моих работах, работы можно показать и чужие, а в чувстве стиля. Если ты умеешь хорошо одеться сам, значит и проекты будут соответствующими.Поэтому в моем гардеробе, как и в архитектуре, главное место занимают форма, пропорции, цвет и стремление к гармонии между новыми веяниями и собственным стилем.
+						</p>
+						<div class="section__header">
+							О фаворитах в гардеробе
+						</div>
+						<p class="section__text">
+							Из гардероба точно никогда не расстанусь с кроссовками, из-за своей любви к танцам и активному образу жизни. 
+						</p>
+					</div>
+					<div class="section" id="img3__text">
+						<div class="section__header">
+							О том, каким был бы интерьер в стиле  glo
+						</div>
+						<p class="section__text">
+							Простой и технологичный, ведь важно как и восприятие самого пространства в целом, так и то, какие ты испытываешь ощущения от присутствия в нем. К слову, glo можно использовать в помещении, и это большой плюс в пользу комфорта.
+						</p>
+						<div class="section__header">
+							О рабочем пространстве
+						</div>
+						<p class="section__text">
+							У меня на столе, как правило, всегда лежат какие-то бумаги и чертежи. Я на них записываю или рисую. На самом деле люблю, когда рабочее пространство пустое — так мне проще сосредоточиться. А вот на стеллаже рядом лежат книги, каталоги и разные образцы.
+						</p>
+					</div>
+					<div class="section" id="img4__text">
+						<div class="section__header">
+							О том, как по-новому взглянуть на стиль
+						</div>
+						<p class="section__text">
+							Под другим углом помогает смотреть на вещи общение с людьми, заказчиками, инженерами, строителями.  Постоянные контакты с различными культурными и социальными слоями общества, в каждом из которых есть своя эстетика, своя правда.
+						</p>
+						<p class="section__text">
+							На самом деле это самые простые вещи. Мы все живем в движении, стараемся развиваться и не стоять на месте. Искать новые ракурсы. К примеру, glo сочетает в себе удобство и технологичность. Такие вещи стали неотъемлемой частью нашей жизни, именно они меняют наш взгляд на давно знакомые предметы.
+						</p>
+					</div>
+					<div class="section" id="img5__text">
+						<div class="section__header">
+							О переменах
+						</div>
+						<p class="section__text">
+							Менять и трансформировать свое пространство я не люблю, этого в рабочем процессе хватает. А уж ремонт в собственном доме или переезд в другое место это отдельная боль, решаюсь на перемены, только когда понимаю, что уже они необходимы.
+						</p>
+						<div class="section__header">
+							О фаворитах на рабочем столе
+						</div>
+						<p class="section__text">
+							С рабочего стола готова выкинуть все кроме маркера для эскизов, чашки для кофе и нового glo – простого, тонкого с чистыми линиями.
+						</p>
+					</div>
+					<div class="section" id="img6__text">
+						<div class="section__header">
+							О референсах
+						</div>
+						<p class="section__text">
+							В референсах мне важно, чтобы в них были свежие идеи, интересные детали, либо неожиданные решения достаточно простых вещей. Но они служат лишь для вдохновения, стараюсь не заниматься копированием.
+						</p>
+						<p class="section__text">
+							Для своего личного проекта почему-то никогда референсы не собираю, хотя уже несколько раз делала ремонт для себя и родителей. Они, как правило, попадаются уже в процессе работы с пространством. Понять что тебе самому нужно, иногда бывает непросто, поэтому в моем случае больше импровизации.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="slide__text slide__text--bottom js-slide__text">
-			eweerwer
-			<!--# include virtual="./src/includes/text-artukhina.html" -->
+			<div class="section" id="img1__text">
+				<div class="section__header">
+					О стиле заказчика в интерьере и вдохновении
+				</div>
+				<p class="section__text">
+					Для меня очень важно, чтобы заказчик был уверен в себе и в своих решениях, обладал чувством прекрасного и был готов к экспериментам, к движению вперед. В идеале — это тот, кто готов отказаться от банальных решений и не боится взглянуть на вещи под разными углами.
+				</p>
+				<p class="section__text">
+					Меня вдохновляет прежде всего работа с цветом и с пропорциями, благодаря которым простые вещи становятся сложными. Даже заказчик в первую очередь ассоциирую с цветом, а уже потом со стилем. А еще очень вдохновляет любовь к русскому авангарду.
+				</p>
+				<div class="section__header">
+					О личном стиле
+				</div>
+				<p class="section__text">
+					Эклектичный минимализм.
+				</p>
+			</div>
+			<div class="section" id="img2__text">
+				<div class="section__header">
+					Об архитектуре в гардеробе
+				</div>
+				<p class="section__text">
+					Помню, как на диплом меня взял преподаватель сказав, что дело не в моих работах, работы можно показать и чужие, а в чувстве стиля. Если ты умеешь хорошо одеться сам, значит и проекты будут соответствующими.Поэтому в моем гардеробе, как и в архитектуре, главное место занимают форма, пропорции, цвет и стремление к гармонии между новыми веяниями и собственным стилем.
+				</p>
+				<div class="section__header">
+					О фаворитах в гардеробе
+				</div>
+				<p class="section__text">
+					Из гардероба точно никогда не расстанусь с кроссовками, из-за своей любви к танцам и активному образу жизни. 
+				</p>
+			</div>
+			<div class="section" id="img3__text">
+				<div class="section__header">
+					О том, каким был бы интерьер в стиле  glo
+				</div>
+				<p class="section__text">
+					Простой и технологичный, ведь важно как и восприятие самого пространства в целом, так и то, какие ты испытываешь ощущения от присутствия в нем. К слову, glo можно использовать в помещении, и это большой плюс в пользу комфорта.
+				</p>
+				<div class="section__header">
+					О рабочем пространстве
+				</div>
+				<p class="section__text">
+					У меня на столе, как правило, всегда лежат какие-то бумаги и чертежи. Я на них записываю или рисую. На самом деле люблю, когда рабочее пространство пустое — так мне проще сосредоточиться. А вот на стеллаже рядом лежат книги, каталоги и разные образцы.
+				</p>
+			</div>
+			<div class="section" id="img4__text">
+				<div class="section__header">
+					О том, как по-новому взглянуть на стиль
+				</div>
+				<p class="section__text">
+					Под другим углом помогает смотреть на вещи общение с людьми, заказчиками, инженерами, строителями.  Постоянные контакты с различными культурными и социальными слоями общества, в каждом из которых есть своя эстетика, своя правда.
+				</p>
+				<p class="section__text">
+					На самом деле это самые простые вещи. Мы все живем в движении, стараемся развиваться и не стоять на месте. Искать новые ракурсы. К примеру, glo сочетает в себе удобство и технологичность. Такие вещи стали неотъемлемой частью нашей жизни, именно они меняют наш взгляд на давно знакомые предметы.
+				</p>
+			</div>
+			<div class="section" id="img5__text">
+				<div class="section__header">
+					О переменах
+				</div>
+				<p class="section__text">
+					Менять и трансформировать свое пространство я не люблю, этого в рабочем процессе хватает. А уж ремонт в собственном доме или переезд в другое место это отдельная боль, решаюсь на перемены, только когда понимаю, что уже они необходимы.
+				</p>
+				<div class="section__header">
+					О фаворитах на рабочем столе
+				</div>
+				<p class="section__text">
+					С рабочего стола готова выкинуть все кроме маркера для эскизов, чашки для кофе и нового glo – простого, тонкого с чистыми линиями.
+				</p>
+			</div>
+			<div class="section" id="img6__text">
+				<div class="section__header">
+					О референсах
+				</div>
+				<p class="section__text">
+					В референсах мне важно, чтобы в них были свежие идеи, интересные детали, либо неожиданные решения достаточно простых вещей. Но они служат лишь для вдохновения, стараюсь не заниматься копированием.
+				</p>
+				<p class="section__text">
+					Для своего личного проекта почему-то никогда референсы не собираю, хотя уже несколько раз делала ремонт для себя и родителей. Они, как правило, попадаются уже в процессе работы с пространством. Понять что тебе самому нужно, иногда бывает непросто, поэтому в моем случае больше импровизации.
+				</p>
+			</div>
 		</div>
 	</div>
 </div>

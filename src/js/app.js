@@ -5,7 +5,8 @@ if (module.hot) {
 $(function(){
  	var isOpen = false;
  	var slide = '';
- 	var slides = $('.js-slides').children();
+ 	var slides = $('.js-slide');
+ 	var videos = $('.js-story');
 
  	function openSlideshow() {
  		isOpen = true;
@@ -34,13 +35,13 @@ $(function(){
  	}
 
 	$('.js-close-slideshow').on('click', closeSlideshow);
-	// var slider = $('.js-slides').flipbox({
-	// 	vertical: false,
-	// });
+
+	var slider = $('.js-slides').flipbox({
+		vertical: false,
+	});
 	
 	// goto next
 	function nextSlide () {
-		debugger;
 		return slider.flipbox('next');
 	}
 	// back to previous
@@ -53,7 +54,10 @@ $(function(){
 		return slider.flipbox('jump', index)
 	}
 
- 	$('.js-slides').on('ended', '.js-slide__video', nextSlide);
+	$('.js-slideshow-forward').on('click', nextSlide);
+	$('.js-slideshow-backward').on('click', prevSlide);
+
+ 	videos.on('ended', '.js-slide__video', nextSlide);
 
 
 	$(window).on('popstate', route);

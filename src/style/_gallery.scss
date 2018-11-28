@@ -19,57 +19,74 @@
 
     &__close {
     	position: absolute;
-	    top: 35px;
-	    right: 40px;
-	    font-size: 60px;
-	    width: 18px;
-	    height: 18px;
+	    top: 5px;
+	    right: 15px;
+	    
 	    background: 50% 50% url('/static/close.svg') no-repeat;
-	    border: none;
-	    cursor: pointer;
     }
+}
+
+.popup-control {
+	width: 18px;
+    height: 18px;
+    padding: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    outline: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: rgba(0, 0, 0, .5);
+		transition: .4s;
+	}
 }
 
 .slider {
 	display: none;
-	background: #fff;
 	min-width: 820px;
 	min-height: 520px;
 	max-width: 820px;
 	max-height: 520px;
-	overflow: auto;
+	overflow: visible;
 	position: relative;
 
 	&__forward,
 	&__backward {
 		position: absolute;
-		top: 0;
-		width: 70px;
-		height: 100%;
-		display: none;
+		top: 50%;
+		border-radius: 50%;
+		display: block;
 	}
 
 	&__backward {
 		right: 100%;
-		background: #fcc 50% 50% url('/static/back.svg') no-repeat;
+		background: 50% 50% url('/static/back.svg') no-repeat;
+		transform: translate(-10px, -50%);
 	}
 
 	&__forward {
 		left: 100%;
-		background: #ffc 50% 50% url('/static/forward.svg') no-repeat;
+		background: 50% 50% url('/static/forward.svg') no-repeat;
+		transform: translate(10px, -50%);
 	}
 }
 
 .slides {
 	display: flex;
+	background: #fff;
 }
 
 .slides__sidebar {
 	width: 300px;
+	background: #fff;
 }
 
 .slides__viewport {
 	width: 520px;
+	height: 520px;
 	max-height: 520px;
 	overflow: hidden;
 }
@@ -77,6 +94,24 @@
 .slider__header,
 .slide__text--bottom {
 	display: none;
+	background: #fff;
+}
+
+.slide__text {
+	color: #000;
+
+	.section__text {
+		font-size: 13px;
+	}
+
+	.section__header {
+		font-size: 16px;
+		margin-bottom: 13px;
+	}
+
+	.section {
+		
+	}
 }
 
 .slideshow {
@@ -105,6 +140,11 @@
 @media screen and (max-width: 960px) {
 	.slider {
 		margin-top: 80px;
+
+		&__forward,
+		&__backward {
+			display: none;
+		}
 	}
 }
 
@@ -120,6 +160,8 @@
 	.slides__viewport {
 		max-width: 375px;
 		max-height: 375px;
+		width: 375px;
+		height: 375px;
 	}
 	
 	.slide,
