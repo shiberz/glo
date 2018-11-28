@@ -5,8 +5,12 @@ if (module.hot) {
 $(function(){
  	var isOpen = false;
  	var slide = '';
+ 	var story = '';
  	var slides = $('.js-slide');
  	var videos = $('.js-story');
+ 	var slider_img = $('.js-slides');
+ 	var slider_video = $('.js-stories');
+	slider_video.hide();
 
  	function openSlideshow() {
  		isOpen = true;
@@ -18,16 +22,27 @@ $(function(){
  		isOpen = false;
  		$(document.body).removeClass('no-scroll');
 	 	$('.js-main-content').removeClass('slideshow');
+	 	$('.section--show').removeClass('section--show');
 	 	window.location.hash = '';
  	}
 
  	function route() {
  		var hash = window.location.hash.replace('#!', '');
 
- 		if (hash.startsWith('video') || hash.startsWith('img')) {
+ 		if (hash.startsWith('img')) {
  			slide = hash;
+ 			slider_video.hide();
+ 			slider_img.show();
+ 			setImgNav();
  			openSlideshow();
- 			goTo(hash);
+ 			goToImg(hash);
+ 		} else if(hash.startsWith('video')) {
+ 			story = hash;
+ 			slider_video.show();
+ 			slider_img.hide();
+ 			setStoryNav()
+ 			openSlideshow();
+ 			goToVideo(hash);
  		} else {
  			closeSlideshow();
  			slide = '';
@@ -36,7 +51,7 @@ $(function(){
 
 	$('.js-close-slideshow').on('click', closeSlideshow);
 
-	var slider = $('.js-slides').flipbox({
+	var slider = slider_img.flipbox({
 		vertical: false,
 	});
 	
@@ -77,24 +92,54 @@ $(function(){
 		return slider.flipbox('prev', true);
 	}
 	// goto a specified slide
-	function goTo(id) {
+	function goToImg(id) {
 		showText(id);
 		var index = $.map(slides, el => el.id).indexOf(id);
 		return slider.flipbox('jump', index)
 	}
 
-	var mc = new Hammer($('.js-slides')[0]);
-	mc.on("swipeleft", nextSlide);
-	mc.on("swiperight", prevSlide);
+	function goToVideo(id) {
+		story = id;
+		videos.hide();
+		var el = $(`#${id}`);
+		var video = el.children('.js-slide__video');
+		el.show();
+		video.attr('preload', 'preload');
+		video.attr('autoplay', 'autoplay');
+		video[0].play();
+	}
 
-	$('.js-slideshow-forward').on('click', nextSlide);
-	$('.js-slideshow-backward').on('click', prevSlide);
+	function nextVideo() {
+		console.log('nextVideo');	
+	}
 
-	$(window).on('resize', function() {
-		slider.flipbox('resize');
-	})
+	function prevVideo() {
+		console.log('prevVideo');
+	}
 
- 	videos.on('ended', '.js-slide__video', nextSlide);
+	function setImgNav() {
+		var mc = new Hammer($('.js-slides')[0]);
+		mc.on("swipeleft", nextSlide);
+		mc.on("swiperight", prevSlide);
+
+		$('.js-slideshow-forward').off();
+		$('.js-slideshow-backward').off();
+		$('.js-slideshow-forward').on('click', nextSlide);
+		$('.js-slideshow-backward').on('click', prevSlide);
+	}
+
+	function setStoryNav() {
+		var mc = new Hammer($('.js-story')[0]);
+		mc.on("swipeleft", nextVideo);
+		mc.on("swiperight", prevVideo);
+
+		$('.js-slideshow-forward').off();
+		$('.js-slideshow-backward').off();
+		$('.js-slideshow-forward').on('click', nextVideo);
+		$('.js-slideshow-backward').on('click', prevVideo);
+	}
+
+ 	videos.on('ended', '.js-slide__video', nextVideo);
 
 
 	$(window).on('popstate', route);
