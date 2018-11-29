@@ -52,7 +52,24 @@ html, body {
 }
 
 .logo {
-	margin: 40px 0;
+	display: block;
+	margin: 0 auto 40px;
+	background: 50% 50% url('/static/logo.png') no-repeat;
+	background-size: contain;
+	width: 292px;
+	height: 71px;
+
+	@media only screen and ( min-device-pixel-ratio: 1.25),
+	only screen and ( min-resolution: 192dpi),
+	only screen and ( min-resolution: 1.25dppx) {
+		background-image: url('/static/logo@2x.png');
+	}
+
+	@media only screen and ( min-device-pixel-ratio: 2.88),
+	only screen and ( min-resolution: 288dpi),
+	only screen and ( min-resolution: 3dppx) {
+		background-image: url('/static/logo@3x.png');
+	}
 }
 
 .footer {
@@ -63,6 +80,7 @@ html, body {
 
 .header {
 	min-width: 375px;
+	padding-top: 40px;
 }
 
 .nowrap {
