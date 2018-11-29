@@ -54,10 +54,11 @@ $(function(){
  	}
 
 	$('.js-close-slideshow').on('click', closeSlideshow);
-
-	var slider = slider_img.flipbox({
-		vertical: false,
-	});
+	$(window).on('keydown', (e)=>{
+		if(e.key === 'Escape') {
+			closeSlideshow()
+		}
+	})
 	
 	function showText(id) {
 		$('.section--show').removeClass('section--show');
@@ -73,12 +74,8 @@ $(function(){
 			id = (id > 6) ? 1 : id;
 			id = `img${id}`;
 		} 
-		if(slide.startsWith('video')){
-			id = (id > 4) ? 1 : id
-			id = `video${id}`;
-		} 
 		showText(id);
-		return slider.flipbox('next');
+		return goToImg(id);
 	}
 	// back to previous
 	function prevSlide () {
@@ -88,18 +85,13 @@ $(function(){
 			id = (id < 1) ? 6 : id;
 			id = `img${id}`;
 		} 
-		if(slide.startsWith('video')){
-			id = (id < 1) ? 4 : id
-			id = `video${id}`;
-		} 
-		showText(id);
-		return slider.flipbox('prev', true);
+		return goToImg(id);
 	}
 	// goto a specified slide
 	function goToImg(id) {
 		showText(id);
-		var index = $.map(slides, el => el.id).indexOf(id);
-		return slider.flipbox('jump', index)
+		$('.slide--open').removeClass('slide--open');
+		return $(`#${id}`).addClass('slide--open');
 	}
 
 	function stopStory() {
@@ -137,15 +129,36 @@ $(function(){
 		return goToVideo(`video${id}`);
 	}
 
+	function switchImg(e) {
+		if(e.key === 'ArrowRight') {
+			nextSlide();
+		}
+		if(e.key === 'ArrowLeft') {
+			prevSlide();
+		}
+	}
+
 	function setImgNav() {
 		var mc = new Hammer($('.js-slides')[0]);
 		mc.on("swipeleft", nextSlide);
 		mc.on("swiperight", prevSlide);
 
-		$('.js-slideshow-forward').off();
-		$('.js-slideshow-backward').off();
+		$('.js-slideshow-forward').off('click');
+		$('.js-slideshow-backward').off('click');
+		$(window).off('keydown', switchVideo);
+
 		$('.js-slideshow-forward').on('click', nextSlide);
 		$('.js-slideshow-backward').on('click', prevSlide);
+		$(window).on('keydown', switchImg);
+	}
+
+	function switchVideo(e) {
+		if(e.key === 'ArrowRight') {
+			nextVideo();
+		}
+		if(e.key === 'ArrowLeft') {
+			prevVideo();
+		}
 	}
 
 	function setStoryNav() {
@@ -153,10 +166,12 @@ $(function(){
 		mc.on("swipeleft", nextVideo);
 		mc.on("swiperight", prevVideo);
 
-		$('.js-slideshow-forward').off();
-		$('.js-slideshow-backward').off();
+		$('.js-slideshow-forward').off('click');
+		$('.js-slideshow-backward').off('click');
+		$(window).off('keydown', switchImg);
 		$('.js-slideshow-forward').on('click', nextVideo);
 		$('.js-slideshow-backward').on('click', prevVideo);
+		$(window).on('keydown', switchVideo);
 	}
 
  	$('.js-slide__video').on('ended', nextVideo);

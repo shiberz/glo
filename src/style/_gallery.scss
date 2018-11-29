@@ -103,6 +103,20 @@
 	max-height: 520px;
 	overflow: hidden;
 	margin: 0 auto;
+	position: relative;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity .4s ease;
+
+	&--open {
+		opacity: 1;
+		transition: opacity .7s ease-in;
+	}
 }
 
 .slider__header,

@@ -17,7 +17,6 @@ module.exports = {
     fs: 'empty',
   },
   entry: [
-    './src/js/jquery.flipbox.js',
     './src/js/app.js',  
     './src/style/main.scss', 
     './src/style/expert_page.scss'
