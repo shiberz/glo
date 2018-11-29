@@ -6,3 +6,8 @@
 .flipbox-wrapper .flipbox-box .flipbox-side.flipbox-right {transform-origin: top right;}
 .flipbox-wrapper .flipbox-box .flipbox-side.flipbox-top {transform-origin: top center;}
 .flipbox-wrapper .flipbox-box .flipbox-side.flipbox-bottom {transform-origin: bottom center;}
+
+
+_::-webkit-full-page-media, _:future, :root .slide img {
+	transform: scale(0.77);
+}
