@@ -111,11 +111,18 @@
 	top: 0;
 	left: 0;
 	opacity: 0;
-	transition: opacity .4s ease;
+	display: none;
 	width: 100%;
 
 	&--open {
 		opacity: 1;
+		display: block;
+	}
+}
+
+.slide--animated {
+	transition: opacity .4s ease;
+	&.slide--open {
 		transition: opacity .7s ease-in;
 	}
 }

@@ -6,8 +6,10 @@ $(function(){
  	var isOpen = false;
  	var slide = '';
  	var story = '';
- 	var slides_tpl = $('#js-slides').detach().html();
- 	var video_tpl = $('#js-stories').detach().html();
+ 	var slides_tpl = $('#js-slides').html();
+ 	var video_tpl = $('#js-stories').html();
+ 	$('#js-slides').remove();
+ 	$('#js-stories').remove();
  	var slides = $('.js-slide');
  	var videos = $('.js-story');
  	var slider_img = $('.js-slides');
@@ -107,13 +109,14 @@ $(function(){
 	function goToVideo(id) {
 		stopStory();
 		story = id;
-		videos.hide();
-		var el = $(`#${id}`);
+		$('.slide--open').removeClass('slide--open');
+		var el = $(`#${id}`).addClass('slide--open');;
 		var video = el.children('.js-slide__video');
-		el.show();
 		video.attr('preload', 'preload');
 		video.attr('autoplay', 'autoplay');
 		current_story = video[0];
+		video.off('ended');
+		video.on('ended', nextVideo);
 		current_story.play();
 	}
 
@@ -177,9 +180,6 @@ $(function(){
 		$('.js-slideshow-backward').on('click', prevVideo);
 		$(window).on('keydown', switchVideo);
 	}
-
- 	$('.js-slide__video').on('ended', nextVideo);
-
 
 	$(window).on('popstate', route);
 	route();
