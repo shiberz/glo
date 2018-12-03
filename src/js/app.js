@@ -6,12 +6,14 @@ $(function(){
  	var isOpen = false;
  	var slide = '';
  	var story = '';
+ 	var slides_tpl = $('#js-slides').detach().html();
+ 	var video_tpl = $('#js-stories').detach().html();
  	var slides = $('.js-slide');
  	var videos = $('.js-story');
  	var slider_img = $('.js-slides');
  	var slider_video = $('.js-stories');
  	var current_story = null;
-	slider_video.hide();
+	
 
  	function openSlideshow(isStory) {
  		isOpen = true;
@@ -35,6 +37,7 @@ $(function(){
 
  		if (hash.startsWith('img')) {
  			slide = hash;
+ 			slider_img.html(slides_tpl);
  			slider_video.hide();
  			slider_img.show();
  			setImgNav();
@@ -42,6 +45,7 @@ $(function(){
  			goToImg(hash);
  		} else if(hash.startsWith('video')) {
  			story = hash;
+ 			slider_video.html(video_tpl);
  			slider_video.show();
  			slider_img.hide();
  			setStoryNav()
