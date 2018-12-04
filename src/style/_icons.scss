@@ -29,6 +29,12 @@
 		width: 80px;
 		height: 80px;
 	}
+
+	&__text {
+		display: inline-block;
+		line-height: 12px;
+		padding-top: 15px;
+	}
 }
 
 @media screen and (max-width: 720px) {
