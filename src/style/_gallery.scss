@@ -104,6 +104,11 @@
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
+
+	&--stories {
+		width: 320px;
+		max-width: 320px;
+	}
 }
 
 .slide {
@@ -263,8 +268,19 @@
 	}
 }
 
+.link {
+	color: #405362;
+    text-decoration: none;
+    border-bottom: 1px solid #405362;
 
-
+    &:hover,
+    &:active,
+    &:focus {
+    	color: #8093a2;
+		border-bottom: 1px solid #8093a2;
+		transition: .4s;
+    }
+}
 
 
 
