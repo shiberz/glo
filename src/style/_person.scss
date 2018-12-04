@@ -51,6 +51,15 @@
 			}
 		}
 	}
+
+	&__go-back {
+		width: 36px;
+		height: 44px;
+		background: 50% 50% url('/static/back.svg') no-repeat;
+		margin: 48px 20px 0 0;
+		display: block;
+		float: left;
+	}
 }
 
 @media screen and (max-width: 720px) {
@@ -81,6 +90,10 @@
 		&__link {
 			padding: 0;
 		}
+
+		&__go-back {
+			margin-top: 18px;
+		}
 	}
 }
 
@@ -90,11 +103,7 @@
 
 	.person__go-back {
 		width: 16px;
-		height: 44px;
-		background: 50% 50% url('/static/back.svg') no-repeat;
-		margin: 0 20px 0 0;
-		display: block;
-		float: left;
+		margin-top: 0;
 	}
 
 	.person__link {
